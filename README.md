@@ -1,0 +1,1 @@
+# IntaSend Typescript SDK
