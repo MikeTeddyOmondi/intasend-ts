@@ -5,20 +5,25 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
-    "/dist"
+    "/dist",
+    "README.md",
+    "CHANGELOG.md"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "tsup ./src/index.ts --format esm --dts",
+    "lint": "tsc",
     "test": "vitest"
   },
   "keywords": [],
   "author": "MikeTeddyOmondi",
   "license": "MIT",
   "devDependencies": {
-    "typescript": "^5.5.4",
-    "vitest": "^2.0.5"
+    "@changesets/cli": "^2.29.2",
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.1"
   },
   "dependencies": {
-    "axios": "^1.8.3"
+    "axios": "^1.8.4"
   }
 }

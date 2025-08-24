@@ -14,8 +14,8 @@ export class IntaSend {
 
         // Set base URL based on the 'live' flag
         this.baseUrl = config.live
-            ? "https://payments.intasend.com/v1"
-            : "https://sandbox.intasend.com/v1";
+            ? "https://payments.intasend.com/api/v1"
+            : "https://sandbox.intasend.com/api/v1";
 
         // Optionally allow manual override of baseUrl via config
         if (config.baseUrl) {

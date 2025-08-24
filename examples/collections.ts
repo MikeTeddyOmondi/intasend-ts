@@ -1,8 +1,8 @@
-import { IntaSend, MpesaStkPushRequest } from "../src";
+import { IntaSend, MpesaStkPushRequest } from "../dist/index.mjs";
 
 const intaSend = new IntaSend({
-    publishableKey: "",
-    secretKey: "",
+    publishableKey: process.env.INTASEND_PUBLIC_KEY!,
+    secretKey: process.env.INTASEND_SECRET_KEY!,
     live: false,
 }) 
 
@@ -16,8 +16,10 @@ let payload = {
 
 
 async function initStkPush() {
-    let response = collections.mpesaStkPush(payload)
-    console.log(response)
+    let response = await collections.mpesaStkPush(payload)
+    console.log(response) // RZO8E3Q
+
+    collections.mpesaStkPushStatus(response.invoice.invoice_id)
 }
 
 initStkPush()
